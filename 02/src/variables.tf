@@ -36,6 +36,6 @@ variable "vpc_name" {
 
 variable "vms_ssh_root_key" {
   type        = string
-  default     = "<your_ssh_ed25519_key>"
+  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICcg3/z8meFK2AboLbtx4HNRh2euj/mx01qMY6EziHlM netology@netology-VirtualBox"
   description = "ssh-keygen -t ed25519"
 }

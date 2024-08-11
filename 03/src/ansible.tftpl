@@ -1,0 +1,8 @@
+
+%{ for instance_group_name, instance_group in instances ~}
+[${instance_group_name}]
+%{ for instance in instance_group ~}
+${instance["name"]}   ansible_host=${instance["network_interface"][0]["nat_ip_address"] != "" ? instance["network_interface"][0]["nat_ip_address"] : instance["network_interface"][0]["ip_address"]} fqdn=${instance["fqdn"]}
+%{ endfor ~}
+
+%{ endfor ~}
